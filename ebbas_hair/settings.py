@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-fl!=h(zo&eoy!52^$2&1$&io&e4ko!x-v*dn0+62-)gmp(x=y3
 DEBUG = False
 
 ALLOWED_HOSTS = ['8000-ebbagronvall-ebbashair-tjbu8hu00kz.ws.codeinstitute-ide.net',
-                'herokuapp.com']
+                '.herokuapp.com']
 
 
 # Application definition
