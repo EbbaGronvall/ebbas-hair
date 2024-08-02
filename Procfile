@@ -1,0 +1,1 @@
+web: gunicorn ebbas_hair.wsgi
