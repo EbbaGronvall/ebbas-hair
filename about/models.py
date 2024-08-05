@@ -9,3 +9,4 @@ class Stylist(models.Model):
     bio = models.TextField()
     speciality = models.CharField(max_length=255)
     price = models.IntegerField()
+    active = models.BooleanField(default=True)

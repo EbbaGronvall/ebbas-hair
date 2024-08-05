@@ -5,5 +5,5 @@ from .models import Stylist
 # Create your views here.
 
 class StylistList(generic.ListView):
-    queryset = Stylist.objects.all()
+    queryset = Stylist.objects.filter(active=True)
     template_name = "about/about.html"
