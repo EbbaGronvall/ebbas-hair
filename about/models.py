@@ -7,5 +7,5 @@ from django.contrib.auth.models import User
 class Stylist(models.Model):
     stylist_name = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.TextField()
-    specialties = models.CharField(max_length=255)
+    speciality = models.CharField(max_length=255)
     price = models.IntegerField()
