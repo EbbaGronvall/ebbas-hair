@@ -10,4 +10,3 @@ class AboutAdmin(SummernoteModelAdmin):
     list_filter = ('active',)
     summernote_fields = ('bio',)
 # Register your models here.
-

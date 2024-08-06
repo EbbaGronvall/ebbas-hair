@@ -10,3 +10,6 @@ class Stylist(models.Model):
     speciality = models.CharField(max_length=255)
     price = models.IntegerField()
     active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.stylist_name.username
