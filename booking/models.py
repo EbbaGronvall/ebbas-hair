@@ -30,8 +30,8 @@ class Booking(models.Model):
         if self.day.weekday() >= 5: 
             raise ValidationError('Bookings can only be made on weekdays.')
         # Ensure the time slot is available
-        if Booking.objects.filter(day=self.day, time=self.time).exists():
-            raise ValidationError('The selected time slot is already booked.')
+        if Booking.objects.filter(day=self.day, time=self.time, stylist=self.stylist).exists():
+            raise ValidationError('The selected time slot is already booked for this stylist.')
 
     def __str__(self):
         return f"Booking by {self.customer.username} with {self.stylist.stylist_name.username} on {self.day} at {self.time}"
