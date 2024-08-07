@@ -1,0 +1,30 @@
+{% extends "base.html" %} 
+{% block content %}
+
+<h3>Update Email</h3>
+<form method="post">
+    {% csrf_token %}
+    {{ email_form.as_p }}
+    <button type="submit" name="email">Update Email</button>
+</form>
+
+<h3>Your Bookings</h3>
+{% for booking in bookings %}
+    <form method="post" action="{% url 'mypage' %}">
+        {% csrf_token %}
+        <input type="hidden" name="booking_id" value="{{ booking.id }}">
+        <div>
+            <p><strong>Current Booking:</strong> {{ booking.day }} at {{ booking.time }}</p>
+            <label for="new_time">Select new time:</label>
+            <select name="new_time" id="new_time">
+                {% for time_value, time_display in time_choices %}
+                    <option value="{{ time_value }}">{{ time_display }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit" name="update_booking">Update Booking</button>
+            <button type="submit" name="delete_booking" style="color: red;">Delete Booking</button>
+        </div>
+    </form>
+{% endfor %}
+
+{% endblock %}
