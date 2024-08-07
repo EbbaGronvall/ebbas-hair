@@ -1,6 +1,6 @@
-from . import views
+from .views import BookingPage
 from django.urls import path
 
 urlpatterns = [
-    path('', views.BookingPage.as_view() , name='booking')
+    path('', BookingPage, name='booking')
 ]
