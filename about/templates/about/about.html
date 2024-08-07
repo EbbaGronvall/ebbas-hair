@@ -1,5 +1,7 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} 
 
+{% block content %}
+{% load static %}
 <!-- about.html content starts here -->
 
 
@@ -17,17 +19,17 @@
             Speciality: {{ stylist.speciality}}
         </p>
         <p>
-            Price: {{ stylist.price }}
+            Price: {{ stylist.price }}€
         </p>
     </div>
     <div class="col-md-5">
-       <!-- <img src="" alt="" class="featurette-image image-responsive">-->
+       <!-- <img src="{% static 'images/ebba.webp' %}" alt="" class="featurette-image image-responsive">-->
     </div>
 
     {% else %}
 
     <div class="col-md-5">
-        <!--<img src="{{ member.image_source }}" alt="" class="featurette-image image-responsive">-->
+       <!--<img src="{% static 'images/roger.webp' %}" alt="" class="featurette-image image-responsive">--> 
     </div>
     <div class="col-md-7">
         <h3>{{ stylist.stylist_name }}</h3>
@@ -38,7 +40,7 @@
             Speciality: {{ stylist.speciality}}
         </p>
         <p>
-            Price: {{ stylist.price }}
+            Price: {{ stylist.price }}€
         </p>
     </div>
 
