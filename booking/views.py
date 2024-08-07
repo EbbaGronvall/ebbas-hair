@@ -11,7 +11,7 @@ from datetime import datetime
 def BookingPage(request):
     if request.method == 'POST':
         form = BookingForm(request.POST)
-        if form.is_vaid():
+        if form.is_valid():
             booking = form.save(commit=False)
             booking.customer = request.user
             if Booking.objects.filter(day=booking.day, time=booking.time, stylist=booking.stylist).exists():
