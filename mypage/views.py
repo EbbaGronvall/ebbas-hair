@@ -5,6 +5,7 @@ from django.contrib import messages
 from booking.models import Booking, TIME_CHOICES
 from booking.forms import BookingForm
 from .forms import EmailUpdateForm
+from datetime import datetime
 
 @login_required
 def mypage(request):
@@ -22,12 +23,14 @@ def mypage(request):
         elif 'update_booking' in request.POST:
             # Handle booking update
             booking_id = request.POST.get('booking_id')
+            new_day = request.POST.get('new_day')
             new_time = request.POST.get('new_time')
             booking = get_object_or_404(Booking, id=booking_id, customer=user)
 
             if Booking.objects.filter(day=booking.day, time=new_time).exists():
                 messages.error(request, 'The selected time slot is already booked.')
             else:
+                booking.day = new_day
                 booking.time = new_time
                 booking.save()
                 messages.success(request, 'Your booking has been updated.')
@@ -48,5 +51,6 @@ def mypage(request):
         'booking_forms': BookingForm,
         'bookings': bookings,
         'time_choices': TIME_CHOICES,
+        'date_today': datetime.now().date(),
     }
     return render(request, 'mypage/mypage.html', context)
