@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from about.models import Stylist
-from django.utils import timezone
 from django.core.exceptions import ValidationError
 from datetime import datetime
 
@@ -23,9 +22,13 @@ class Booking(models.Model):
     stylist = models.ForeignKey(Stylist, on_delete=models.CASCADE, related_name="stylist_booking", null=True, blank=True)
     day = models.DateField(default=datetime.now)
     time = models.CharField(max_length=10, choices=TIME_CHOICES, default="10:00")
+    comment = models.TextField(max_length=150, null=True, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
 
     def clean(self):
+        # Ensure the requested day is not in the past
+        if self.day < datetime.now().date():
+            raise ValidationError('Bookings cannot be made in the past.')
         # Ensure the booking day is a weekday
         if self.day.weekday() >= 5: 
             raise ValidationError('Bookings can only be made on weekdays.')
