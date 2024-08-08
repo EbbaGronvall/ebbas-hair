@@ -1,5 +1,8 @@
+body {
+    background-color: rgb(148, 136, 128);
+}
 .navbar {
-    background-color: rgb(213, 194, 187);
+    background-color: rgb(211, 198, 190);
 }
 
 .masthead {
@@ -9,10 +12,17 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    margin-bottom: 40px;
   }
 
+.container {
+    background-color: rgba(211, 198, 190, 0.75);
+    padding: 20px;
+    color: rgb(54, 48, 45);
+}
 .col-md-5 img {
     width: 100%;
+    padding: 10px 0 10px 0;
 }
 
 .col-md-7 p {
