@@ -57,8 +57,8 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <div class="row collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a
                 class="nav-link {% if request.path == home_url %}active{% endif %}"
@@ -122,6 +122,16 @@
         </div>
       </div>
     </nav>
+
+    <!-- Header -->
+
+    {% if request.path == '/' or request.path == '/about/' %}
+    <header class="masthead">
+
+    </header>
+    {% endif %}
+
+
 
     <main class="container">
       {% block content %}

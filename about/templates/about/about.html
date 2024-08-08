@@ -7,11 +7,11 @@
 
 {% for stylist in stylist_list %}
 
-<div class="featurette">
+<div class="row">
     {% if forloop.counter|divisibleby:2 %}
 
     <div class="col-md-7">
-        <h3>{{ stylist.stylist_name }}</h3>
+        <h3><strong>{{ stylist.stylist_name }}</strong></h3>
         <p>
             {{ stylist.bio | safe }}
         </p>
@@ -23,16 +23,16 @@
         </p>
     </div>
     <div class="col-md-5">
-       <!-- <img src="{% static 'images/ebba.webp' %}" alt="" class="featurette-image image-responsive">-->
+        <img src="{% static 'images/michelle.webp' %}" alt="" class="featurette-image image-responsive">
     </div>
 
     {% else %}
 
     <div class="col-md-5">
-       <!--<img src="{% static 'images/roger.webp' %}" alt="" class="featurette-image image-responsive">--> 
+       <img src="{% static 'images/roger.webp' %}" alt="" class="featurette-image image-responsive">
     </div>
     <div class="col-md-7">
-        <h3>{{ stylist.stylist_name }}</h3>
+        <h3><strong>{{ stylist.stylist_name }}</strong></h3>
         <p>
             {{ stylist.bio | safe }}
         </p>
