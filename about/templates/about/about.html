@@ -23,13 +23,20 @@
         </p>
     </div>
     <div class="col-md-5">
+        {% if forloop.counter|divisibleby:2 %}
         <img src="{% static 'images/michelle.webp' %}" alt="" class="featurette-image image-responsive">
+        {% endif %}
     </div>
 
     {% else %}
 
     <div class="col-md-5">
-       <img src="{% static 'images/roger.webp' %}" alt="" class="featurette-image image-responsive">
+        {% if forloop.counter|divisibleby:3 %}
+        <img src="{% static 'images/roger.webp' %}" alt="" class="featurette-image image-responsive">
+        
+        {% else %}
+        <img src="{% static 'images/ebba.webp' %}" alt="" class="featurette-image image-responsive">
+        {% endif %}
     </div>
     <div class="col-md-7">
         <h3><strong>{{ stylist.stylist_name }}</strong></h3>
