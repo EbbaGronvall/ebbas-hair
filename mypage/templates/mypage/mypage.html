@@ -4,9 +4,10 @@
 
 <h3>Update Email</h3>
 <form method="post">
+    <p><strong>Current email: </strong>{{ user.email }}</p>
     {% csrf_token %}
     {{ email_form.as_p }}
-    <button type="submit" name="email">Update Email</button>
+    <button type="submit">Update Email</button>
 </form>
 
 <h3>Your Bookings</h3>

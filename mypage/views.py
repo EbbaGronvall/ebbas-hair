@@ -8,19 +8,31 @@ from .forms import EmailUpdateForm
 from datetime import datetime
 
 @login_required
-def mypage(request):
+def update_email(request):
+    user = request.user
+
+    if request.method == 'POST' and 'email' in request.POST:
+        email_form = EmailUpdateForm(request.POST, instance=user)
+        if email_form.is_valid():
+            email_form.save()
+            messages.success(request, 'Your email has been updated.')
+            return redirect('mypage')
+    else:
+        # Initialize the form with the current user instance
+        email_form = EmailUpdateForm(instance=user)
+
+    return {
+        'email_form': email_form,
+        'current_email': user.email
+    }
+
+@login_required
+def update_booking(request):
     user = request.user
     bookings = Booking.objects.filter(customer=user)
 
     if request.method == 'POST':
-        if 'email' in request.POST:
-            # Handle email update
-            email_form = EmailUpdateForm(request.POST, instance=user)
-            if email_form.is_valid():
-                email_form.save()
-                messages.success(request, 'Your email has been updated.')
-                return redirect('mypage')
-        elif 'update_booking' in request.POST:
+        if 'update_booking' in request.POST:
             # Handle booking update
             booking_id = request.POST.get('booking_id')
             new_day = request.POST.get('new_day')
@@ -43,14 +55,21 @@ def mypage(request):
             messages.success(request, 'Your booking has been deleted.')
             return redirect('mypage')
     else:
-        email_form = EmailUpdateForm(instance=user)
         booking_forms = {booking.id: BookingForm(instance=booking) for booking in bookings}
 
-    context = {
-        'email_form': EmailUpdateForm,
+    return {
+        'bookings': bookings,
         'booking_forms': BookingForm,
         'bookings': bookings,
         'time_choices': TIME_CHOICES,
         'date_today': datetime.now().date(),
     }
+
+@login_required
+def mypage(request):
+    email_context = update_email(request)
+    booking_context = update_booking(request)
+
+    context = {**email_context, **booking_context}
+
     return render(request, 'mypage/mypage.html', context)
