@@ -1,47 +1,46 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 {% block content %}
 {% load static %}
 <div class="container special-background">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
-<h3>Update Email</h3>
-<form method="post">
-    <p><strong>Current email: </strong>{{ user.email }}</p>
-    {% csrf_token %}
-    {{ email_form.as_p }}
-    <button class="btn btn-signup right" type="submit">Update Email &raquo;</button>
-</form>
-</div>
-<div class="col-md-8 mt-3 offset-md-2">
-<h3>Your Bookings</h3>
-{% for booking in bookings %}
-    <form method="post" action="{% url 'mypage' %}">
-        {% csrf_token %}
-        <input type="hidden" name="booking_id" value="{{ booking.id }}">
-        <div>
-            <p><strong>Current Booking:</strong> {{ booking.day }} at {{ booking.time }}</p>
-            <label for="new_day">Select new day:</label>
-            <input type="date" name="new_day" id="new_day" value="{{ booking.day|date:'Y-m-d' }}" min="{{ date_today|date:'Y-m-d' }}">
-            <br>
-            <label for="new_time">Select new time:</label>
-            <select name="new_time" id="new_time">
-                {% for time_value, time_display in time_choices %}
-                    <option value="{{ time_value }}" {% if time_value == booking.time %}selected{% endif %}>{{ time_display }}</option>
-                {% endfor %}
-            </select>
-            <div>
-            <button class="btn btn-signup right" type="submit" name="update_booking">Update Booking &raquo;</button>
-            <button class="btn btn-signup right" type="submit" name="delete_booking">Delete Booking &raquo;</button>
+            <h3>Update Email</h3>
+            <form method="post">
+                <p><strong>Current email: </strong>{{ user.email }}</p>
+                {% csrf_token %}
+                {{ email_form.as_p }}
+                <button class="btn btn-signup right" type="submit">Update Email &raquo;</button>
+            </form>
         </div>
+        <div class="col-md-8 mt-3 offset-md-2">
+            <h3>Your Bookings</h3>
+            {% for booking in bookings %}
+            <form method="post" action="{% url 'mypage' %}">
+                {% csrf_token %}
+                <input type="hidden" name="booking_id" value="{{ booking.id }}">
+                <div>
+                    <p><strong>Current Booking:</strong> {{ booking.day }} at {{ booking.time }}</p>
+                    <label for="new_day">Select new day:</label>
+                    <input type="date" name="new_day" id="new_day" value="{{ booking.day|date:'Y-m-d' }}"
+                        min="{{ date_today|date:'Y-m-d' }}">
+                    <br>
+                    <label for="new_time">Select new time:</label>
+                    <select name="new_time" id="new_time">
+                        {% for time_value, time_display in time_choices %}
+                        <option value="{{ time_value }}" {% if time_value == booking.time %}selected{% endif %}>
+                            {{ time_display }}</option>
+                        {% endfor %}
+                    </select>
+                    <div>
+                        <button class="btn btn-signup right" type="submit" name="update_booking">Update Booking
+                            &raquo;</button>
+                        <button class="btn btn-signup right" type="submit" name="delete_booking">Delete Booking
+                            &raquo;</button>
+                    </div>
+                </div>
+            </form>
+            {% endfor %}
         </div>
-        {% if not forloop.last %}
-
-<hr class="featurette-divider">
-
-{% endif %}
-    </form>
-{% endfor %}
-</div>
-</div>
+    </div>
 </div>
 {% endblock %}
