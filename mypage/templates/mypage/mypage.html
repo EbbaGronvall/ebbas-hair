@@ -1,15 +1,18 @@
 {% extends "base.html" %} 
 {% block content %}
 {% load static %}
-
+<div class="container special-background">
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
 <h3>Update Email</h3>
 <form method="post">
     <p><strong>Current email: </strong>{{ user.email }}</p>
     {% csrf_token %}
     {{ email_form.as_p }}
-    <button type="submit">Update Email</button>
+    <button class="btn btn-signup right" type="submit">Update Email &raquo;</button>
 </form>
-
+</div>
+<div class="col-md-8 mt-3 offset-md-2">
 <h3>Your Bookings</h3>
 {% for booking in bookings %}
     <form method="post" action="{% url 'mypage' %}">
@@ -27,11 +30,18 @@
                 {% endfor %}
             </select>
             <div>
-            <button type="submit" name="update_booking">Update Booking</button>
-            <button type="submit" name="delete_booking">Delete Booking</button>
+            <button class="btn btn-signup right" type="submit" name="update_booking">Update Booking &raquo;</button>
+            <button class="btn btn-signup right" type="submit" name="delete_booking">Delete Booking &raquo;</button>
         </div>
         </div>
+        {% if not forloop.last %}
+
+<hr class="featurette-divider">
+
+{% endif %}
     </form>
 {% endfor %}
-
+</div>
+</div>
+</div>
 {% endblock %}

@@ -2,20 +2,25 @@
 
 {% block content %}
 {% load static %}
-<h2>Book an Appointment</h2>
+<div class="container special-background">
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <h2>Book an Appointment</h2>
 
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Book Appointment</button>
-</form>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="btn btn-signup right" type="submit">Book Appointment &raquo;</button>
+            </form>
 
-{% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-        {% endfor %}
-    </ul>
-{% endif %}
-
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</div>
 {% endblock %}

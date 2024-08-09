@@ -7,10 +7,12 @@ body {
 }
 main {
     min-height: 80vh;
+    box-shadow: rgba(54, 48, 45, 0.2) 0px 7px 29px 0px;
 }
 form {
     background-color: rgba(211, 198, 190, 1.5);
     padding: 20px 10px 20px 10px;
+    box-shadow: rgba(54, 48, 45, 0.2) 0px 7px 29px 0px;
 }
 a {
     color: rgb(54, 48, 45);
@@ -18,6 +20,9 @@ a {
 }
 input {
     border-radius: 5px;
+}
+.btn {
+    padding: .375rem .75rem .75rem 0;
 }
 .navbar {
     background-color: rgb(211, 198, 190);
