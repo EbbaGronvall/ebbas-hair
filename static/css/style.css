@@ -5,6 +5,20 @@ body {
     font-family: "Comfortaa", sans-serif;
     color: rgb(54, 48, 45);
 }
+main {
+    min-height: 80vh;
+}
+form {
+    background-color: rgba(211, 198, 190, 1.5);
+    padding: 20px 10px 20px 10px;
+}
+a {
+    color: rgb(54, 48, 45);
+    text-decoration: none;
+}
+input {
+    border-radius: 5px;
+}
 .navbar {
     background-color: rgb(211, 198, 190);
 }
@@ -23,6 +37,16 @@ body {
     background-color: rgba(211, 198, 190, 0.75);
     padding: 20px;
     color: rgb(54, 48, 45);
+}
+.special-background {
+    background: url(/static/images/special-background.webp) no-repeat center center / cover;
+    min-height: inherit;
+}
+
+.special-background > div {
+    background-color: rgba(211, 198, 190, 0.90);
+    padding: inherit;
+
 }
 .col-md-5 img {
     width: 100%;
