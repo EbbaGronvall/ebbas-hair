@@ -8,6 +8,9 @@ body {
 main {
     min-height: 80vh;
     box-shadow: rgba(54, 48, 45, 0.2) 0px 7px 29px 0px;
+    background-color: rgba(241, 234, 231, 0.75);
+    padding: 20px;
+    color: rgb(54, 48, 45);
 }
 form {
     background-color: rgba(211, 198, 190, 1.5);
@@ -24,10 +27,26 @@ input {
 .btn {
     padding: .375rem .75rem .75rem 0;
 }
+/* Styling for navbar*/
 .navbar {
-    background-color: rgb(211, 198, 190);
+    background-color: rgb(54, 48, 45);
+    color: rgb(241, 234, 231);
+}
+.navbar-dark .navbar-brand {
+    color: rgb(241, 234, 231);
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(241, 234, 231, .55);
+    padding-left: 12px;
+}
+.navbar-dark .navbar-nav .nav-link.active {
+    color: rgba(241, 234, 231, .9);
+}
+.navbar-toggler {
+    border: 0;
 }
 
+/* Styling for header */
 .masthead {
     height: 50vh;
     min-height: 350px;
@@ -36,12 +55,16 @@ input {
     background-position: center;
     background-repeat: no-repeat;
     margin-bottom: 40px;
+    color: rgb(241, 234, 231);
+  }
+  h1 {
+    font-size: 60px;
   }
 
 .container {
-    background-color: rgba(211, 198, 190, 0.75);
+    
     padding: 20px;
-    color: rgb(54, 48, 45);
+    
 }
 .special-background {
     background: url(/static/images/special-background.webp) no-repeat center center / cover;

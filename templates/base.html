@@ -39,7 +39,7 @@
 
   <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'home' %}"
           ><span class="brand"
@@ -127,7 +127,17 @@
 
     {% if request.path == '/' or request.path == '/about/' %}
     <header class="masthead">
-
+      <div class="container h-100">
+        <div class="row h-100 align-items-end">
+          <div class="col-12 text-center">
+            {% if request.path == '/' %}
+            <h1>Welcome to Ebbas Hair</h1>
+            {% else %}
+            <h1>Our Origin Stories</h1>
+            {% endif %}
+          </div>
+        </div>
+      </div>
     </header>
     {% endif %}
 
