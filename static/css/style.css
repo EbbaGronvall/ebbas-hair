@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
 
+/* General styling */
 body {
     background-color: rgb(148, 136, 128);
     font-family: "Comfortaa", sans-serif;
@@ -12,21 +13,7 @@ main {
     padding: 20px;
     color: rgb(54, 48, 45);
 }
-form {
-    background-color: rgba(211, 198, 190, 1.5);
-    padding: 20px 10px 20px 10px;
-    box-shadow: rgba(54, 48, 45, 0.2) 0px 7px 29px 0px;
-}
-a {
-    color: rgb(54, 48, 45);
-    text-decoration: none;
-}
-input {
-    border-radius: 5px;
-}
-.btn {
-    padding: .375rem .75rem .75rem 0;
-}
+
 /* Styling for navbar*/
 .navbar {
     background-color: rgb(54, 48, 45);
@@ -60,7 +47,22 @@ input {
   h1 {
     font-size: 60px;
   }
-
+/* Styling for pages containing forms*/
+form {
+    background-color: rgba(211, 198, 190, 1.5);
+    padding: 20px 10px 20px 10px;
+    box-shadow: rgba(54, 48, 45, 0.2) 0px 7px 29px 0px;
+}
+a {
+    color: rgb(54, 48, 45);
+    text-decoration: none;
+}
+input {
+    border-radius: 5px;
+}
+.btn {
+    padding: .375rem .75rem .75rem 0;
+}
 .container {
     
     padding: 20px;
@@ -76,6 +78,7 @@ input {
     padding: inherit;
 
 }
+/* Styling for the About page */
 .col-md-5 img {
     width: 100%;
     padding: 10px 0 10px 0;
@@ -84,7 +87,7 @@ input {
 .col-md-7 p {
     width: 100%;
 }
-
+/* Styling for footer */
 footer a {
-    color: white;
+    color: rgb(241, 234, 231);
 }

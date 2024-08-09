@@ -2,55 +2,37 @@
 {% block content %}
 {% load static %}
 
-
-
-{% for stylist in stylist_list %}
-
-<div class="featurette">
-    {% if forloop.counter|divisibleby:2 %}
-
+<div class="row">
     <div class="col-md-7">
-        <h3>{{ stylist.stylist_name }}</h3>
-        <p>
-            {{ stylist.bio | safe }}
+        <h2>Come in and take a break</h2>
+        
+            <p>At Ebba's Hair, we believe that your hair is a reflection of your unique style and personality. Our
+                talented team of stylists is dedicated to making you look and feel your best, whether you're here for a
+                fresh cut, braids, or a fade.
+            </p>
+            <p> Step into our salon and experience a relaxing atmosphere where creativity meets expertise. From the
+                moment you walk through our doors, you're not just a client you're part of the Ebba's Hair family.
+            </p>
+            <p>Follow the links at the top of the page to read more about our different stylists and book your appointment.</p>
+        <hr>
+        <h3>Opening Hours</h3>
+        <p>Monday to Friday 10:00 - 19:00</p>
+        <hr>
+        <h4>Contact Information</h4>
+        
+        <p><strong>Find us: </strong><a
+                href="https://www.google.com/maps/place/Timmermansgatan+36b,+118+55+Stockholm/@59.3160127,18.0582972,17z/data=!3m1!4b1!4m6!3m5!1s0x465f77e5efefe775:0x96209d955865a383!8m2!3d59.31601!4d18.0608721!16s%2Fg%2F11c10v8vxg?entry=ttu"target="_blank" rel="noopener" aria-label="Our adress(opens in a new tab)">Timmermansgatan 36b in Stockholm</a>
+            
         </p>
-        <p>
-            Speciality: {{ stylist.speciality}}
-        </p>
-        <p>
-            Price: {{ stylist.price }}
-        </p>
-    </div>
+        
+            <p><strong>Call us:</strong> 080-123 456 789</p>
+            <p><strong>Email us:</strong> ebbashairsalon@example.com</p>
+        </div>
     <div class="col-md-5">
-       <!-- <img src="" alt="" class="featurette-image image-responsive">-->
+        <img src="{% static 'images/salon.webp' %}" alt="">
     </div>
+    
 
-    {% else %}
-
-    <div class="col-md-5">
-        <!--<img src="{{ member.image_source }}" alt="" class="featurette-image image-responsive">-->
-    </div>
-    <div class="col-md-7">
-        <h3>{{ stylist.stylist_name }}</h3>
-        <p>
-            {{ stylist.bio | safe }}
-        </p>
-        <p>
-            Speciality: {{ stylist.speciality}}
-        </p>
-        <p>
-            Price: {{ stylist.price }}
-        </p>
-    </div>
-
-    {% endif %}
 </div>
-{% if not forloop.last %}
-
-<hr class="featurette-divider">
-
-{% endif %}
-
-{% endfor %}
 
 {% endblock %}

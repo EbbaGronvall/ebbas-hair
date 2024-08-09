@@ -24,7 +24,7 @@
     </div>
     <div class="col-md-5">
         {% if forloop.counter|divisibleby:2 %}
-        <img src="{% static 'images/michelle.webp' %}" alt="" class="featurette-image image-responsive">
+        <img src="{% static 'images/michelle.webp' %}" alt="A picture of Michelle">
         {% endif %}
     </div>
 
@@ -32,10 +32,10 @@
 
     <div class="col-md-5">
         {% if forloop.counter|divisibleby:3 %}
-        <img src="{% static 'images/roger.webp' %}" alt="" class="featurette-image image-responsive">
+        <img src="{% static 'images/roger.webp' %}" alt="A picture of Roger">
         
         {% else %}
-        <img src="{% static 'images/ebba.webp' %}" alt="" class="featurette-image image-responsive">
+        <img src="{% static 'images/ebba.webp' %}" alt="A picture of Ebba">
         {% endif %}
     </div>
     <div class="col-md-7">
@@ -55,7 +55,7 @@
 </div>
 {% if not forloop.last %}
 
-<hr class="featurette-divider">
+<hr>
 
 {% endif %}
 
