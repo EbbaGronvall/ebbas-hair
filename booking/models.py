@@ -26,8 +26,11 @@ class Booking(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
 
     def clean(self):
-        # Ensure the requested day is not in the past
-        if self.day < datetime.now().date():
+         # Combine day and time into a full datetime object for comparison
+        booking_datetime = datetime.combine(self.day, datetime.strptime(self.time, "%H:%M").time())
+    
+        # Ensure the requested day and time are not in the past
+        if booking_datetime < datetime.now():
             raise ValidationError('Bookings cannot be made in the past.')
         # Ensure the booking day is a weekday
         if self.day.weekday() >= 5: 

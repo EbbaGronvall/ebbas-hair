@@ -6,6 +6,7 @@ from booking.models import Booking, TIME_CHOICES
 from booking.forms import BookingForm
 from .forms import EmailUpdateForm
 from datetime import datetime
+from django.http import HttpResponseRedirect
 
 @login_required
 def update_email(request):
@@ -18,9 +19,9 @@ def update_email(request):
             messages.success(request, 'Your email has been updated.')
             return redirect('mypage')
     else:
-        # Initialize the form with the current user instance
         email_form = EmailUpdateForm(instance=user)
 
+    # Return a dictionary with context data
     return {
         'email_form': email_form,
         'current_email': user.email
@@ -33,13 +34,12 @@ def update_booking(request):
 
     if request.method == 'POST':
         if 'update_booking' in request.POST:
-            # Handle booking update
             booking_id = request.POST.get('booking_id')
             new_day = request.POST.get('new_day')
             new_time = request.POST.get('new_time')
             booking = get_object_or_404(Booking, id=booking_id, customer=user)
 
-            if Booking.objects.filter(day=booking.day, time=new_time).exists():
+            if Booking.objects.filter(day=new_day, time=new_time, stylist=booking.stylist).exists():
                 messages.error(request, 'The selected time slot is already booked.')
             else:
                 booking.day = new_day
@@ -48,7 +48,6 @@ def update_booking(request):
                 messages.success(request, 'Your booking has been updated.')
                 return redirect('mypage')
         elif 'delete_booking' in request.POST:
-            # Handle booking deletion
             booking_id = request.POST.get('booking_id')
             booking = get_object_or_404(Booking, id=booking_id, customer=user)
             booking.delete()
@@ -57,10 +56,10 @@ def update_booking(request):
     else:
         booking_forms = {booking.id: BookingForm(instance=booking) for booking in bookings}
 
+    # Return a dictionary with context data
     return {
         'bookings': bookings,
-        'booking_forms': BookingForm,
-        'bookings': bookings,
+        'booking_forms': booking_forms,
         'time_choices': TIME_CHOICES,
         'date_today': datetime.now().date(),
     }
@@ -68,8 +67,14 @@ def update_booking(request):
 @login_required
 def mypage(request):
     email_context = update_email(request)
-    booking_context = update_booking(request)
+    if isinstance(email_context, HttpResponseRedirect):
+        return email_context  # If a redirect response is returned, redirect immediately.
 
+    booking_context = update_booking(request)
+    if isinstance(booking_context, HttpResponseRedirect):
+        return booking_context  # If a redirect response is returned, redirect immediately.
+
+    # Combine contexts if neither is a redirect
     context = {**email_context, **booking_context}
 
     return render(request, 'mypage/mypage.html', context)

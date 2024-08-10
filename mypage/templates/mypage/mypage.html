@@ -19,7 +19,7 @@
                 {% csrf_token %}
                 <input type="hidden" name="booking_id" value="{{ booking.id }}">
                 <div>
-                    <p><strong>Current Booking:</strong> {{ booking.day }} at {{ booking.time }}</p>
+                    <p><strong>Current Booking:</strong> {{ booking.day }} at {{ booking.time }} with {{booking.stylist}}</p>
                     <label for="new_day">Select new day:</label>
                     <input type="date" name="new_day" id="new_day" value="{{ booking.day|date:'Y-m-d' }}"
                         min="{{ date_today|date:'Y-m-d' }}">

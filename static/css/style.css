@@ -60,6 +60,9 @@ a {
 input {
     border-radius: 5px;
 }
+select {
+    border-radius: 5px;
+}
 .btn {
     padding: .375rem .75rem .75rem 0;
 }
