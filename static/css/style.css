@@ -104,4 +104,5 @@ footer a {
 
 .toast-container {
     z-index: 1050; /* Make sure toasts are visible on top of other elements */
+    
 }

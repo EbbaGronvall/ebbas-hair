@@ -147,25 +147,29 @@
       {% block content %}
       <!-- Content Goes here -->
       {% endblock content %}
+
+      <!-- Toastmaker -->
       {% if messages %}
-      <div aria-live="polite" aria-atomic="true" class="position-relative" style="z-index: 11">
-          <div class="toast-container position-fixed bottom-0 end-0 p-3">
-              {% for message in messages %}
-              <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="5000">
-                  <div class="toast-header">
-                      <strong class="me-auto">{{ message.tags|title }}</strong>
-                      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                  </div>
-                  <div class="toast-body">
-                      {{ message }}
+      <div class="toast-container position-fixed top-0 end-0 p-3">
+          {% for message in messages %}
+          <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="5000">
+              <div class="toast-body">
+                  <div class="d-flex gap-4">
+                      
+                      <div class="d-flex flex-grow-1 align-items-center">
+                          <span class="fw-semibold">{{ message }}</span>
+                          <button type="button" class="btn-close btn-close-sm btn-close-black ms-auto" data-bs-dismiss="toast"
+                              aria-label="Close"></button>
+                      </div>
                   </div>
               </div>
-              {% endfor %}
           </div>
+          {% endfor %}
       </div>
-  {% endif %}
+      {% endif %}
     </main>
-
+    
+    
     <!-- Footer -->
     <footer class="mt-auto py-3 dark-bg">
       
