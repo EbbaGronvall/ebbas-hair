@@ -18,6 +18,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
 
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon//favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 
     <!-- Font Awesome CSS -->
     <link
@@ -75,6 +80,7 @@
                 >About</a
               >
             </li>
+            <!-- Navbar for logged in users-->
             {% if user.is_authenticated %}
             <li class="nav-item">
               <a
@@ -100,6 +106,7 @@
                 >Logout</a
               >
             </li>
+            <!-- Navbar for users not logged in -->
             {% else %}
             <li class="nav-item">
               <a
@@ -123,7 +130,7 @@
       </div>
     </nav>
 
-    <!-- Header -->
+    <!-- Header for home and about page -->
 
     {% if request.path == '/' or request.path == '/about/' %}
     <header class="masthead">

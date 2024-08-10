@@ -70,13 +70,7 @@ def update_booking(request):
         'date_today': datetime.now().date(),
     }
 
-    # Return a dictionary with context data
-    return {
-        'bookings': bookings,
-        'booking_forms': booking_forms,
-        'time_choices': TIME_CHOICES,
-        'date_today': datetime.now().date(),
-    }
+    
 
 @login_required
 def mypage(request):
