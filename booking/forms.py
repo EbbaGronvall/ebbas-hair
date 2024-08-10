@@ -8,7 +8,7 @@ class BookingForm(forms.ModelForm):
         fields = ['stylist', 'day', 'time', 'comment']
         widgets = {
             'day': forms.DateInput(attrs={'type': 'date'}),
-            'comment': forms.Textarea(attrs={'placeholder': 'Is there anything we need to know about your hair beforehand?'})
+            'comment': forms.Textarea(attrs={'placeholder': 'Is there anything we need to know about your hair beforehand?'}),
         }
 
     def __init__(self, *args, **kwargs):

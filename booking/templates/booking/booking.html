@@ -7,19 +7,23 @@
         <div class="col-md-8 mt-3 offset-md-2">
             <h2>Book an Appointment</h2>
 
-            <form method="post">
+            <form method="post" class="form-group">
                 {% csrf_token %}
-                {{ form.as_p }}
+                <div class="fieldWrapper">
+                {{ form.stylist.label_tag }} {{ form.stylist }}
+            </div>
+            <div>
+                {{ form.day.label_tag }} {{ form.day }}
+            </div>
+            <div>
+                {{ form.time.label_tag }} {{ form.time }}
+            </div>
+            <div>
+                {{ form.comment.label_tag }} {{ form.comment }}
+            </div>
+                
                 <button class="btn btn-signup right" type="submit">Book Appointment &raquo;</button>
             </form>
-
-            {% if messages %}
-            <ul class="messages">
-                {% for message in messages %}
-                <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-                    {% endfor %}
-            </ul>
-            {% endif %}
         </div>
     </div>
 </div>

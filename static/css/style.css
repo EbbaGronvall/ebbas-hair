@@ -57,6 +57,9 @@ form {
     height: 80px;
     width: 100%;
 }
+.form-group div {
+    padding: 10px;
+}
 a {
     color: rgb(54, 48, 45);
     text-decoration: none;
@@ -97,4 +100,8 @@ select {
 /* Styling for footer */
 footer a {
     color: rgb(241, 234, 231);
+}
+
+.toast-container {
+    z-index: 1050; /* Make sure toasts are visible on top of other elements */
 }
