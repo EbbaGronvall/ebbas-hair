@@ -199,3 +199,17 @@ I would not call it a bug but there was an issue where errormessages showed up t
 ### Unfixed Bugs
 
 Again this might not be a bug but it bugs me. Since the allauth views and forms can not be easily altered there are no toastmessages on the register or log in page. This can easily be fixed by creating a custom form with custom views but I simply ran out of time. This is something I will fix in the future.
+
+## Deployment
+
+I deployed my project to Heroku early in the process as adviced. This was simple as I have done it a few times before now during the course. 
+- In Heroku I created a new app.
+- I choose Python as my buildpack.
+- In the settings tab I filled out my database url and my secret key as these are not pushed to github and cannot be accessed by Heroku.
+     - Before I added my statics folder to my project there was also a DISABLE_COLLECTSTATIC key with the value of 1. 
+- In the deployment tab I choose github as my deployment method.
+- Scrolling down on that page I choose to manually deploy my main branch from github.
+- I then checked the 'resources' tab to make sure the Eco Dyno was in place.
+- I then clicked open app and checked that everything worked as it is supposed to.
+
+Important things to do before deploying is to collect all the static files in the statics folder and change the debug setting to false.
