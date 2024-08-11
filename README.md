@@ -213,3 +213,13 @@ I deployed my project to Heroku early in the process as adviced. This was simple
 - I then clicked open app and checked that everything worked as it is supposed to.
 
 Important things to do before deploying is to collect all the static files in the statics folder and change the debug setting to false.
+
+## Credits
+
+### Code
+- The for loop in the aboutpage is heavily inspired by the Code Institute 'Thorin and company' flask walkthrough projects aboutpage. I really liked the layout of that project.
+
+### Media
+- All the images used are from https://www.pexels.com/sv-se/
+- The favicon is custom made using https://favicon.io/
+- The icons in the footer are from https://fontawesome.com/
