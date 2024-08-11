@@ -10,18 +10,18 @@
             <form method="post" class="form-group">
                 {% csrf_token %}
                 <div>
-                {{ form.stylist.label_tag }} {{ form.stylist }}
-            </div>
-            <div>
-                {{ form.day.label_tag }} {{ form.day }}
-            </div>
-            <div>
-                {{ form.time.label_tag }} {{ form.time }}
-            </div>
-            <div>
-                {{ form.comment.label_tag }} {{ form.comment }}
-            </div>
-                
+                    {{ form.stylist.label_tag }} {{ form.stylist }}
+                </div>
+                <div>
+                    {{ form.day.label_tag }} {{ form.day }}
+                </div>
+                <div>
+                    {{ form.time.label_tag }} {{ form.time }}
+                </div>
+                <div>
+                    {{ form.comment.label_tag }} {{ form.comment }}
+                </div>
+
                 <button class="btn btn-signup right" type="submit">Book Appointment &raquo;</button>
             </form>
         </div>

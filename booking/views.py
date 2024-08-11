@@ -5,6 +5,7 @@ from booking.models import Booking, TIME_CHOICES
 from booking.forms import BookingForm
 from datetime import datetime
 
+
 @login_required
 def BookingPage(request):
     if request.method == 'POST':
@@ -12,8 +13,10 @@ def BookingPage(request):
         if form.is_valid():
             booking = form.save(commit=False)
             booking.customer = request.user
-            if Booking.objects.filter(day=booking.day, time=booking.time, stylist=booking.stylist).exists():
-                messages.error(request, 'The selected time slot is already booked.')
+            if Booking.objects.filter(day=booking.day, time=booking.time,
+                                      stylist=booking.stylist).exists():
+                messages.error(request, 'The selected time slot is already' +
+                                        ' booked.')
             else:
                 booking.save()
                 messages.success(request, 'Your appointment has been booked.')
@@ -35,4 +38,3 @@ def BookingPage(request):
     }
 
     return render(request, 'booking/booking.html', context)
-

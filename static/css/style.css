@@ -1,108 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
 
 /* General styling */
 body {
-    background-color: rgb(148, 136, 128);
-    font-family: "Comfortaa", sans-serif;
-    color: rgb(54, 48, 45);
+  background-color: rgb(148, 136, 128);
+  font-family: "Comfortaa", sans-serif;
+  color: rgb(54, 48, 45);
 }
 main {
-    min-height: 80vh;
-    box-shadow: rgba(54, 48, 45, 0.2) 0px 7px 29px 0px;
-    background-color: rgba(241, 234, 231, 0.75);
-    padding: 20px;
-    color: rgb(54, 48, 45);
+  min-height: 80vh;
+  box-shadow: rgba(54, 48, 45, 0.2) 0px 7px 29px 0px;
+  background-color: rgba(241, 234, 231, 0.75);
+  padding: 20px;
+  color: rgb(54, 48, 45);
 }
 
 /* Styling for navbar*/
 .navbar {
-    background-color: rgb(54, 48, 45);
-    color: rgb(241, 234, 231);
+  background-color: rgb(54, 48, 45);
+  color: rgb(241, 234, 231);
 }
 .navbar-dark .navbar-brand {
-    color: rgb(241, 234, 231);
+  color: rgb(241, 234, 231);
 }
 .navbar-dark .navbar-nav .nav-link {
-    color: rgba(241, 234, 231, .55);
-    padding-left: 12px;
+  color: rgba(241, 234, 231, 0.55);
+  padding-left: 12px;
 }
 .navbar-dark .navbar-nav .nav-link.active {
-    color: rgba(241, 234, 231, .9);
+  color: rgba(241, 234, 231, 0.9);
 }
 .navbar-toggler {
-    border: 0;
+  border: 0;
 }
 
 /* Styling for header */
 .masthead {
-    height: 50vh;
-    min-height: 350px;
-    background-image: url(/static/images/header.webp);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin-bottom: 40px;
-    color: rgb(241, 234, 231);
-  }
-  h1 {
-    font-size: 60px;
-  }
+  height: 50vh;
+  min-height: 350px;
+  background-image: url(/static/images/header.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 40px;
+  color: rgb(241, 234, 231);
+}
+h1 {
+  font-size: 60px;
+}
 /* Styling for pages containing forms*/
 form {
-    background-color: rgba(211, 198, 190, 1.5);
-    padding: 20px 10px 20px 10px;
-    box-shadow: rgba(54, 48, 45, 0.2) 0px 7px 29px 0px;
+  background-color: rgba(211, 198, 190, 1.5);
+  padding: 20px 10px 20px 10px;
+  box-shadow: rgba(54, 48, 45, 0.2) 0px 7px 29px 0px;
 }
 .form-group textarea {
-    height: 80px;
-    width: 100%;
+  height: 80px;
+  width: 100%;
 }
 .form-group div {
-    padding: 10px;
+  padding: 10px;
 }
 a {
-    color: rgb(54, 48, 45);
-    text-decoration: none;
+  color: rgb(54, 48, 45);
+  text-decoration: none;
 }
 input {
-    border-radius: 5px;
+  border-radius: 5px;
 }
 select {
-    border-radius: 5px;
+  border-radius: 5px;
 }
 .btn {
-    padding: .375rem .75rem .75rem 0;
+  padding: 0.375rem 0.75rem 0.75rem 0;
 }
 .container {
-    
-    padding: 20px;
-    
+  padding: 20px;
 }
 .special-background {
-    background: url(/static/images/special-background.webp) no-repeat center center / cover;
-    min-height: inherit;
+  background: url(/static/images/special-background.webp) no-repeat center
+    center / cover;
+  min-height: inherit;
 }
 
 .special-background > div {
-    background-color: rgba(211, 198, 190, 0.90);
-    padding: inherit;
-
+  background-color: rgba(211, 198, 190, 0.9);
+  padding: inherit;
 }
 /* Styling for the About page */
 .col-md-5 img {
-    width: 100%;
-    padding: 10px 0 10px 0;
+  width: 100%;
+  padding: 10px 0 10px 0;
 }
 
 .col-md-7 p {
-    width: 100%;
+  width: 100%;
 }
 /* Styling for footer */
 footer a {
-    color: rgb(241, 234, 231);
+  color: rgb(241, 234, 231);
 }
 
 .toast-container {
-    z-index: 1050; /* Make sure toasts are visible on top of other elements */
-    
+  z-index: 1050; /* Make sure toasts are visible on top of other elements */
 }
