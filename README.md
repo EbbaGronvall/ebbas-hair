@@ -172,3 +172,30 @@ In the base.html template there is a div that with the help of some javascript a
 At the bottom of all the pages there is a footer containing links in the form of fontawesome icons. The links open in a new page. Bellow the links the creator of the website is stated.
 
 ![Footer](documentation/footer.PNG)
+
+## Testing
+
+### Manual testing
+- I checked to see that the website works on the browsers: Chrome, Microsoft Edge and Safari.
+- By using devtools I confirmed that the pages of the website are responsive and looks good on standard screen sizes.
+- I have confirmed that the forms works by trying to submit it without required information and without and with faulty information.
+- By submitting the forms correctly I confirmed that when doing so the user is redirected to the correct pages.
+- I confirmed that the pages where the user has to be autorized to enter can not be entered by simply changing the url to for example "/booking". 
+- I checked that the right toastmessages come up when something go wrong or right.
+- I also checked the performance on all the pages using devtools lighthouse.
+
+
+### Validator testing
+
+- I checked that the whole website is readable and easy to understand by running it through https://wave.webaim.org/.
+- I checked all the html code using the W3C validator.
+- I checked the css file using the Jigsaw validator.
+- I checked all my python code using the CI Python Linter.
+
+##  Bugs 
+
+I would not call it a bug but there was an issue where errormessages showed up twice on the booking page and on 'My page' and this was due to that the form sent and validationerror and the view sent that errormessage to the toaster so the error message showed up at the top of the form and at the top right corner.
+
+### Unfixed Bugs
+
+Again this might not be a bug but it bugs me. Since the allauth views and forms can not be easily altered there are no toastmessages on the register or log in page. This can easily be fixed by creating a custom form with custom views but I simply ran out of time. This is something I will fix in the future.
