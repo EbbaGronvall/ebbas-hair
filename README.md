@@ -53,6 +53,7 @@ The 'Could-have's for this website were: Bootstrap Toastmaker, Custom errorpages
 In the tab for the website there is a custom made favicon with the same font and color scheme as the rest of the website. ![Favicon](documentation/favicon-screenshot.PNG)
 
 ### Navigation Bar
+``USERSTORY: As a user I can see the navigation bar at the top of the page so that I can easily click to come to the other pages of the website. ``
 
 The navigationbar contains links to all the different pages depending on if you are authorized or not. When the screen width is under 992px the unorderd list becomes a dropdown menu with a toggle button to the right of the header. 
 
@@ -84,6 +85,7 @@ The header of the page is only visible on the homepage and the aboutpage. This i
 ![Header aboutpage](documentation/header-aboutpage.PNG)
 
 ### Homepage
+``USERSTORY: As a user I am met by a aesthetically pleasing homepage so that I feel welcomed and want to stay on the webpage.``
 
 The homepage contains a welcoming message that tells the user to come in and relax. The user can also see their opening hours and their contact information. The address for the salon is a link to the address on Google Maps.
 
@@ -91,6 +93,7 @@ The homepage contains a welcoming message that tells the user to come in and rel
 ![Homepage small screen](documentation/homepage-small.PNG)
 
 ### Aboutpage
+``USERSTORY: As a user I can read about the salons different stylists and their specialties so that I know with who I want to make the appointment to get the result I want.``
 
 On the aboutpage the user can read more about the salons different stylists. They can also see the stylists speciality and their price. The data for the aboutpage comes from the custom model called StylistList. The stylists are added to the page using a for loop in the template. This for loop is inspired by the 'Thorin and his company' flask walkthrough project. The admin can add new stylists or mark stylists as inactive using the django admin page to hide them from the aboutpage. 
 
@@ -98,6 +101,7 @@ On the aboutpage the user can read more about the salons different stylists. The
 ![Aboutpage small screen](documentation/aboutpage-small.gif)
 
 ### Register
+``USERSTORY: As a user I can create an account so that I can access the booking-page``
 
 The register page is a allauth django model, form and template. The user is asked to fill in their email address, the username they want and a password that fullfills the criteria stated. The user is then asked to repeat the password to confirm it before they will click on the submit button bellow to register as a user.
 
@@ -137,6 +141,7 @@ When the username and the password is correctly entered the user is redirected t
 ![Log in successfull](documentation/login-success.gif)
 
 ### Booking page
+``USERSTORY: As a user I can see the available dates and stylists so that I can book/change an appointment.``
 
 The booking page is a custom django model, form and view. The user needs to choose which stylist they want to meet at what day and what time. The user is also able to attach a comment to their booking if there is something the stylist need to know ahead of the appointment but this textfield is optional. 
 
@@ -164,6 +169,7 @@ In the gif bellow you can see this in action.
 ![Booking process](documentation/booking.gif)
 
 ### My page
+``USERSTORY: As a user I can access "My page" so that I can update my contact information and see/change appointments.``
 
 My page is the page where the user can change their email address and see and change their appointments. This page contains two divs containing forms. 
 
@@ -190,7 +196,7 @@ The log out page is an allauth django model etc just like the register and log i
 ![Toast message](documentation/logout-success.PNG)
 
 ### Bootstrap Toasts
-
+``USERSTORY: As a user I can get pop-up alerts so that I know if something has gone wrong whilst filling out a form.``
 In the base.html template there is a div that with the help of some javascript and a if statement and a for loop displays error and success messages in the top right corner. 
 
 ![Multiple toast messages](documentation/toastmessages.gif)
