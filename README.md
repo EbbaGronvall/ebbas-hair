@@ -19,6 +19,33 @@ For this project I choose five shades of a brownish grey color that I used acros
 ## The Font
 
 I used the Google Font "Comfortaa" for all the text found on the website. It suited my vision best.
+
+## User stories
+Before writing any code I sat down and wrote down the user stories. I used the 'Projects' tab in github to do this. I created a custom issues template and labels called: Must-have, Should-have, Could-have and Won't-have. When I had written down all my user stories I had nine. Three where 'Must-have', three was 'Should-have' and the remaining three were 'Could-have'. Out of these nine seven are done and closed. The two remaining are 'Could-have' and will be implemented in the future. 
+
+![The issues template](documentation/issues-template.PNG)
+
+### Must-have
+The 'Must-have' for Ebba's Hair was: Account registration, My page and Booking-page.
+
+
+![Must-have account registration](documentation/must-have-account.PNG)
+![Must-have my page](documentation/must-have-mypage.PNG)
+![Must-have booking page](documentation/must-have-booking.PNG)
+
+### Should-have
+The 'Should-have's were: Navigation bar, About page and Home page.
+
+![Should-have navbar](documentation/should-have-navbar.PNG)
+![Should-have aboutpage](documentation/should-have-about.PNG)
+![Should-have homepage](documentation/should-have-home.PNG)
+
+### Could-have
+The 'Could-have's for this website were: Bootstrap Toastmaker, Custom errorpages and Admin log in. The Bootstrap Toastmaker issue is the one that is done. The custom errorpages and the admin page will be added at a later time as they are not crutial to the project as they are 'Could-have's.
+
+![Could-have Bootstrap](documentation/could-have-bootstrap.PNG)
+![Could-have errorpages](documentation/could-have-error.PNG)
+![Could-have adminpage](documentation/could-have-admin.PNG)
 ## Features
 
 ### Favicon
