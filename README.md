@@ -1,5 +1,10 @@
 # Ebba's Hair
 
+## Active webpage
+https://ebbas-hair-3297f21c9e92.herokuapp.com/
+
+## Introduction
+
 Ebba's Hair is a website for a hair salon called "Ebba's Hair". It has a page where the user can read more about the stylists who are available for bookings and the different services they offer. There user is also able to find information about where the salon is located, their phonenumber and their email-address. The user is also able to book an appointment online.
 
 Ebba's Hair is not a real salon so the contact information and the stylists are fictional and just for the sake of this website.
